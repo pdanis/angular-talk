@@ -1,0 +1,9 @@
+label { display: inline-block; width: 60px; text-align: right; padding-right: 10px; }
+input[type=text],input[type=url],input[type=email] { width: 200px; padding: 3px; }
+input.ng-valid { border: 1px solid gray }
+input.ng-invalid { border: 1px solid red }
+input.ng-pristine { background-color: white; }
+input.ng-dirty { background-color: #eee }
+input, select { margin: 3px 0px }
+
+div.debug-toggle { text-align: right }

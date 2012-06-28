@@ -1,0 +1,6 @@
+<ul class="menu">
+    <li ng-repeat="route in routes">
+        <strong ng-show="route == current">{{route}}</strong>
+        <a ng-href="#/{{route}}" ng-show="route != current">{{route}}</a>
+    </li>
+</ul>

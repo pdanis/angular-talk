@@ -1,0 +1,6 @@
+<form>
+    <label>Name:</label> <input type="text" ng-model="data.name"/><br/>
+    <label>Description:</label> <input type="text" ng-model="data.description"/><br/>
+    <label>Tags:</label> <input type="text" ng-list ng-model="data.tags"/><br/>
+    <pre>{{data | json}}</pre>
+</form>

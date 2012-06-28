@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="geomapApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="js/directive-geomap.js"></script>
+    <script type="text/javascript" src="http://api4.mapy.cz/loader.js"></script>
+    <script type="text/javascript"> Loader.load(); </script>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/directive-geomap.css" />
+    <title>Geomap</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Default = ophoto</legend>
+        <geomap coords="14.31,50.08"></geomap>
+    </fieldset>
+
+    <fieldset>
+        <legend>Tourist, zoom</legend>
+        <geomap coords="14.19,49.08" type="turist" zoom="12"></geomap>
+    </fieldset>
+
+    <fieldset ng-init="x=14.1234;y=50.1234">
+        <legend>Base by coords</legend>
+        <input type="text" ng-model="x" size="10"/> - <input type="text" ng-model="y" size="5"/>
+        <geomap coords="{{x}},{{y}}" type="base" zoom="14"></geomap>
+    </fieldset>
+</body>
+</html>

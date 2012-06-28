@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="routingApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="lib/angular-sanitize.js"></script>
+    <script type="text/javascript" src="js/routing.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/routing.css" />
+    <title>routing</title>
+</head>
+<body ng-controller="defaultCtrl">
+    <ng-include src="'tpl/routing/menu.html'"></ng-include>
+    <fieldset ng-class="current">
+        <legend>{{current | uppercase}}</legend>
+        <ng-view></ng-view>
+    </fieldset>
+</body>
+</html>

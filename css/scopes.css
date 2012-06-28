@@ -1,0 +1,10 @@
+body > fieldset {
+    background-color: #eee;
+    width: 300px;
+    float: left;
+    margin-right: 10px;
+}
+pre {
+    margin: 0;
+    padding: 3px 10px;
+}

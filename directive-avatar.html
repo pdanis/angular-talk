@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="avatarApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="js/directive-avatar.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/directive-avatar.css" />
+    <title>Directive - Avatar</title>
+</head>
+<body ng-controller="defaultCtrl">
+    <fieldset>
+        <legend>Basic usage</legend>
+        <avatar uid="2"></avatar>
+    </fieldset>
+
+    <fieldset>
+        <legend>Directive in ng-repeat with interpolated attribute</legend>
+        <button ng-click="users.push(users.length + 1)">load</button> ({{users.length}})<br/>
+        <avatar ng-repeat="uid in users" uid="{{uid}}"></avatar>
+    </fieldset>
+</body>
+</html>

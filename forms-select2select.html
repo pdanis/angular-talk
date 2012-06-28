@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="selectsApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="js/forms-select2select.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/forms-select2select.css" />
+    <title>Select to Select</title>
+</head>
+<body ng-controller="defaultCtrl">
+    <fieldset>
+        <legend>select &lt;=&gt; select</legend>
+        <select ng-model="selected.available"
+                ng-options="item as item.label for item in available | orderBy:'label'"
+                multiple size="5"></select>
+        <div class="buttons">
+            <button ng-click="move('final', 'available')">&lt;&lt;</button><br/>
+            <button ng-click="move('available', 'final')">&gt;&gt;</button>
+        </div>
+        <select ng-model="selected.final"
+                ng-options="item as item.label for item in final | orderBy:'label'"
+                multiple size="5"></select>
+
+        <pre>selected: {{selected}}</pre>
+        <pre>final: {{final}}</pre>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="repeatApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="js/repeat.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/repeat.css" />
+    <title>ng-repeat</title>
+</head>
+<body>
+    <fieldset ng-repeat="i in [1,2]" ng-controller="defaultCtrl">
+        <legend>repeat scope #{{i}}</legend>
+        <div ng-repeat="(key,val) in data">
+            <button ng-click="add(key)">add {{key}}</button>
+            <button ng-click="del(key)">del {{key}}</button>
+        </div>
+        <hr/>
+        <ul>
+            <li ng-repeat="num in data.num">
+                {{num}}
+                <ul>
+                    <li ng-repeat="ltr in data.ltr">
+                        {{ltr}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <pre>num: {{data.num}}</pre>
+        <pre>ltr: {{data.ltr}}</pre>
+    </fieldset>
+</body>
+</html>

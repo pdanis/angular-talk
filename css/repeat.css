@@ -1,0 +1,6 @@
+body > fieldset {
+    float: left;
+    background: #eee;
+    margin-right: 20px;
+    padding: 10px;
+}

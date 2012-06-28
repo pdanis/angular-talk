@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="scopesApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="js/scopes.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/scopes.css" />
+    <title>Scopes</title>
+</head>
+<body>
+    <script type="text/ng-template" id="scopes">
+        <pre>root: {{root}}</pre>
+        <pre>one: {{one}}</pre>
+        <pre>two: {{two}}</pre>
+        <pre>three: {{three}}</pre>
+        <pre>one + two + three: {{one + two + three}}</pre>
+    </script>
+
+    <fieldset>
+        <legend>root scope</legend>
+        <div ng-include="'scopes'"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>oneCtrl scope</legend>
+        <div ng-include="'scopes'" ng-controller="oneCtrl"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>twoCtrl scope</legend>
+        <div ng-include="'scopes'" ng-controller="twoCtrl"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>threeCtrl scope</legend>
+        <div ng-include="'scopes'" ng-controller="threeCtrl"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>oneCtrl &gt; twoCtrl scope</legend>
+        <div ng-controller="oneCtrl">
+        <div ng-include="'scopes'" ng-controller="twoCtrl"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>oneCtrl &gt; threeCtrl &gt; twoCtrl scope</legend>
+        <div ng-controller="oneCtrl">
+        <div ng-controller="threeCtrl">
+            <div ng-include="'scopes'" ng-controller="twoCtrl" ng-init="root='changed in template'"></div>
+            <pre>oneCtrl.root: {{$parent.root}}</pre>
+        </div>
+    </fieldset>
+
+</body>
+</html>

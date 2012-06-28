@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="filtersApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="js/filters.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <title>Filters</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Text filters</legend>
+        <label>Text: </label><input type="text" ng-model="text" size="30"/>
+        <pre>uppercase: {{text | uppercase | json}}</pre>
+        <pre>camelize: {{text | camelize | json}}</pre>
+        <pre>substring(10) + uppercase: {{text | substring:0:10 | uppercase | json}}</pre>
+    </fieldset>
+
+    <fieldset>
+        <legend>Array filters</legend>
+        <label>Filter: </label><input type="text" ng-model="filter"/>
+        <label>Add: </label><input type="text" ng-model="new"/><button ng-click="arr.push(new);new=''">add</button>
+        <pre>FILTER: {{arr | filter:filter }}</pre>
+        <pre>LIMIT (1): {{arr | filter:filter | limitTo:1 }}</pre>
+    </fieldset>
+</body>
+</html>

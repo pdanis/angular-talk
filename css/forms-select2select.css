@@ -1,0 +1,8 @@
+div.buttons {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 20px;
+}
+select {
+    width: 150px;
+}

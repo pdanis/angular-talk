@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html ng-app="presentation">
+<head>
+    <title>AngularJS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="../lib/jquery.js"></script>
+    <script src="../lib/angular.js"></script>
+    <script src="js/presentation.js"></script>
+</head>
+<body ng-controller="PresentationController">
+
+    <div id="intro">
+        <img src="images/AngularShieldLogo.png">
+        <h2>Pavol Daniš</h2>
+
+        <h3 ng-show="isAfter()">palto@palto.sk</h3>
+    </div>
+
+    <deck current="activeSlide" total="totalSlides">
+
+        <slide>
+            <h1>ANGULARJS</h1>
+            <h2>prakticky</h2>
+        </slide>
+
+        <slide>
+            <img src="images/photo.jpg" style="height: 130px; margin-bottom: 30px"/>
+            <h1>CO JSEM ZAČ</h1>
+            <ul>
+                <li>10 let praxe</li>
+                <li>webové aplikace (PHP/SQL/JS...)</li>
+                <li>CSFD.cz</li>
+                <li>LMC s.r.o. =&gt; AngularJS</li>
+            </ul>
+        </slide>
+
+
+        <slide>
+            <h2>WEBOVÉ APLIKACE</h2>
+            <h3>... v Javascriptu?</h3>
+            <h3>... a snadno??</h3>
+        </slide>
+
+
+        <slide>
+            <h1>PROBLÉMY</h1>
+            <ul>
+                <li step="1">statické HTML</li>
+                <li step="2">"nízkoúrovňové" browser API</li>
+                <li step="3">míchání aplikační logiky s DOM manipulací</li>
+                <li step="4">zbytečný kód, identifikátory, nepřehlednost, bordel</li>
+                <li step="5">obtížná testovatelnost</li>
+            </ul>
+        </slide>
+
+
+        <slide>
+            <h2>CO NA TO ANGULARJS?</h2>
+            <ul>
+                <li step="1">data binding</li>
+                <li step="2">HTML templates</li>
+                <li step="3">MVC architektura</li>
+                <li step="4">modules, services, DI</li>
+                <li step="5">testovatelnost - tools included! :-)</li>
+            </ul>
+        </slide>
+
+
+        <slide title="Data binding">
+            <h2>TWO-WAY</h2>
+            <h2 step="1">UNOBTRUSIVE</h2>
+            <h2 step="2">SCOPES</h2>
+        </slide>
+
+
+        <slide title="HTML templates">
+            <h2 step="1" style="margin-bottom: 0">DEKLARATIVNÍ</h2>
+            <h4 step="1" style="margin-bottom: 30px">"co" vs "jak"</h4>
+            <h2 step="2">ADVANCED COMPILER</h2>
+            <h2 step="3">DIREKTIVY</h2>
+        </slide>
+
+
+        <slide title="Direktivy">
+            <h2 step="1" style="margin-bottom: 0">VYLEPŠI SI HTML</h2>
+            <h4 step="1" style="margin-bottom: 30px">&lt;geomap coords="x,y"/&gt;<br/>&lt;textarea wysiwyg/&gt;<br/>&lt;fb-login/&gt;<br/>&lt;co-te-napadne/&gt;</h4>
+            <h2 step="2">... vs &lt;div&gt;&lt;div&gt;&lt;div&gt;</h2>
+            <h2 step="3">REUSABLE KOMPONENTY</h2>
+        </slide>
+
+
+        <slide title="Modules, services, DI">
+            <h2 step="1">PŘEHLEDNOST</h2>
+            <h2 step="3">SNADNÁ ÚDRŽBA A ROZŠÍŘENÍ</h2>
+            <h2 step="4">TESTOVATELNOST</h2>
+        </slide>
+
+
+        <slide title="Formuláře">
+            <h2 step="1">VNITŘNÍ STAV</h2>
+            <h2 step="2">NESTED FORMS</h2>
+            <h2 step="3">SLOŽITÉ STRUKTURY</h2>
+        </slide>
+
+
+        <slide title="Routing">
+            <h2 step="1">VIEWS</h2>
+            <h2 step="2">PARTIALS</h2>
+        </slide>
+
+
+        <slide title="Testování">
+            <h2 step="1">TOOLS INCLUDED</h2>
+            <h2 step="2">TESTACULAR</h2>
+        </slide>
+
+
+        <slide>
+            <h2>CO TÍM ZÍSKÁM?</h2>
+            <ul style="margin:0;padding:0">
+                <li>testovatelný, čistý a čitelný kód, bez zbytečné vaty</li>
+                <li>vyšší produktivita</li>
+                <li>náročnost úkolů výrazně klesá :-)</li>
+                <li>radost, zábava :-D</li>
+            </ul>
+            <img src="images/happy_programmer.jpg" style="height: 200px"/>
+        </slide>
+
+
+        <slide>
+            <h2>CHCI SE TO NAUČIT</h2>
+            <ul style="padding:0;margin:0">
+                <li>angularjs.org - tutorial, guide</li>
+                <li>youtube tutorials, meetup prednášky</li>
+                <li>groups.google.com/group/angular</li>
+                <li>github wiki, jsfiddles</li>
+                <li>@AngularJS, @mhevery, @IgorMinar, @vojtajina, @ThomasBurleson, @brianford ...</li>
+            </ul>
+        </slide>
+
+        <slide>
+            <h1 class="big">?</h1>
+        </slide>
+
+    </deck>
+
+</body>
+</html>

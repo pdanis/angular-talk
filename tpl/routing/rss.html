@@ -1,0 +1,8 @@
+<pre ng-show="loading">loading...</pre>
+<ul>
+    <li ng-repeat="i in data | limitTo:5">
+        <a ng-href="i.url">{{i.title}}</a>
+        <span class="date">{{i.date}}</span>
+        <p ng-bind-html-unsafe="i.desc"></p>
+    </li>
+</ul>

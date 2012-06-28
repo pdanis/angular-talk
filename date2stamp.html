@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="dateApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="lib/moment.js"></script>
+    <script type="text/javascript" src="js/date2stamp.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <title>Filter/directive - date2stamp</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Filter</legend>
+        <label>Date: </label><input type="text" ng-model="dateF"/>
+        <pre>TIMESTAMP: {{dateF | date2stamp:'DD/MM/YYYY'}}</pre>
+    </fieldset>
+
+    <fieldset>
+        <legend>Model directive</legend>
+        <label>Date: </label><input type="text" date-input="D.M.YYYY" ng-model="dateD"/>
+        <button ng-click="dateD = dateD + 86400">+ 1 day</button>
+        <pre>TIMESTAMP: {{dateD}}</pre>
+    </fieldset>
+</body>
+</html>

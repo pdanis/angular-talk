@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="formsApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="js/forms.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/forms.css" />
+    <title>Forms</title>
+</head>
+<body ng-controller="defaultCtrl">
+    <fieldset>
+        <legend>Form</legend>
+        <form name="form" novalidate>
+            <div class="debug-toggle"><input type="checkbox" ng-model="debug"/> DEBUG</div>
+            <pre ng-show="debug">form.$valid: {{form.$valid}}</pre>
+            <fieldset ng-form="group1">
+                <pre ng-show="debug">group1.$valid: {{form.$valid}}, group1.name.$dirty: {{group1.name.$dirty}}, group1.name.$error: {{group1.name.$error}}, group1.email.$error: {{group1.email.$error}}</pre>
+                <legend>Main</legend>
+                <label>Name: </label>
+                <input type="text" ng-model="data.name" name="name" required /><br/>
+                <label>Email: </label>
+                <input type="email" ng-model="data.email" name="email" required email-unique />
+                <span ng-show="group1.email.$error.unique && !group1.email.loading">already used!</span>
+                <span ng-show="group1.email.loading">checking...</span><br/>
+                <label>Www: </label>
+                <input type="url" ng-model="data.www" name="www" /><br/>
+                <label>Gender: </label>
+                <select ng-model="data.gender" name="gender" ng-options="key as value for (key, value) in lists.gender"></select><br/>
+                <label>Skills: </label>
+                <input type="text" ng-model="data.skills" name="skills" ng-list /><br/>
+                <label>Active: </label>
+                <input type="checkbox" ng-model="data.active" />
+            </fieldset>
+            <fieldset ng-form="group2" ng-show="group1.$valid">
+                <legend>Addresses</legend>
+                <pre ng-show="debug">group2.$valid: {{group2.$valid}}</pre>
+                <ng-form name="addressForm" ng-repeat="address in data.addresses">
+                    <label>Street: </label>
+                    <input idtype="text" ng-model="address.street" name="street" required />
+                    <span ng-show="addressForm.street.$invalid">!!!</span><br/>
+                    <label>Number: </label>
+                    <input type="text" ng-model="address.number" name="number" ng-pattern="/^([0-9])+$/" /><br/>
+                    <label>City: </label>
+                    <input type="text" ng-model="address.city" name="city" required /><br/>
+                    <label>Gender: </label>
+                    <select ng-model="address.country" name="country" ng-options="key as value for (key, value) in lists.country"></select><br/>
+                    <button ng-click="data.addresses.splice($index, 1)">remove address</button>
+                    <hr/>
+                </ng-form>
+                <button ng-click="data.addresses.push({})">add address</button>
+            </fieldset>
+            <button ng-disabled="form.$invalid">Submit</button>
+        </form>
+
+        <pre>{{data | json}}</pre>
+    </fieldset>
+</body>
+</html>

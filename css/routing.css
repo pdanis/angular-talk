@@ -1,0 +1,52 @@
+.clear {
+    clear: both;
+}
+ul.menu {
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+ul.menu li {
+    display: inline-block;
+    list-style: none;
+    width: 100px;
+    text-align: center;
+    padding: 6px;
+    border: 1px solid #eee;
+    margin-right: 10px;
+}
+.timeout span {
+    font-size: 50px;
+    padding: 20px;
+    display: block;
+}
+.rss ul {
+    padding: 0;
+    margin: 0;
+}
+.rss li {
+    clear: both;
+    list-style: none;
+    display: block;
+    max-width: 600px;
+    margin-top: 25px;
+}
+.rss li p {
+    text-align: justify;
+    min-height: 115px;
+}
+.rss li .date {
+    color: #999;
+    font-size: 0.9em;
+    display: block;
+}
+.rss li img {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+.form input[type=text] {
+    width: 300px;
+}
+.form label {
+    display: inline-block;
+    width: 100px;
+}

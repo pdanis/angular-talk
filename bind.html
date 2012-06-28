@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="bindApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="js/bind.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bind.css" />
+    <title>Bind</title>
+</head>
+<body>
+    <fieldset ng-controller="defaultCtrl">
+        <legend>HELLO WORLD!</legend>
+        Hello <input type="text" ng-model="greeting" /><br/>
+        <pre>Hello {{greeting}}!</pre>
+        <button ng-click="greeting='AngularJS'">Hello AngularJS</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>COMPLEX</legend>
+
+        <label>data.xxx.yyy.zzz:</label>
+        <input type="text" ng-model="data.xxx.yyy.zzz" /><br/>
+
+        <label>data.xxx.zzz:</label>
+        <input type="text" ng-model="data.xxx.zzz" /><br/>
+
+        <label>data.yyy:</label>
+        <input type="text" ng-model="data.yyy" ng-list />
+
+        <pre>{{data | json}}</pre>
+    </fieldset>
+
+    <fieldset ng-controller="loadCtrl">
+        <legend>ASYNC</legend>
+
+        <button ng-click="load()">load $_SERVER</button>
+        <em ng-show="loading">loading...</em>
+
+        <pre>SERVER_SOFTWARE: {{server.SERVER_SOFTWARE}}</pre>
+    </fieldset>
+</body>
+</html>
